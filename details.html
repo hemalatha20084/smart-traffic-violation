@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="details">
+
+    <h1>Violation Details</h1>
+
+    <div class="detail-box">
+
+        <p>
+            <strong>Vehicle Number:</strong>
+            {{ violation.vehicle }}
+        </p>
+
+        <p>
+            <strong>Owner Name:</strong>
+            {{ violation.owner }}
+        </p>
+
+        <p>
+            <strong>Violation Type:</strong>
+            {{ violation.type }}
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            {{ violation.location }}
+        </p>
+
+        <p>
+            <strong>Date:</strong>
+            {{ violation.date }}
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+            {{ violation.status }}
+        </p>
+
+    </div>
+
+    <a class="button" href="{{ url_for('history') }}">
+        Back to History
+    </a>
+
+</div>
+
+{% endblock %}

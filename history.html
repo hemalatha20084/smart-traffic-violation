@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">Violation History</h1>
+
+{% if violations %}
+
+<table>
+
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Vehicle</th>
+            <th>Owner</th>
+            <th>Violation</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for violation in violations %}
+
+        <tr>
+
+            <td>{{ loop.index }}</td>
+
+            <td>{{ violation.vehicle }}</td>
+
+            <td>{{ violation.owner }}</td>
+
+            <td>{{ violation.type }}</td>
+
+            <td>{{ violation.location }}</td>
+
+            <td>{{ violation.date }}</td>
+
+            <td>{{ violation.status }}</td>
+
+            <td>
+                <a href="{{ url_for('details', index=loop.index0) }}">
+                    View
+                </a>
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% else %}
+
+<div class="empty">
+    <h2>No violations recorded</h2>
+    <p>Add your first traffic violation.</p>
+
+    <a class="button" href="{{ url_for('add') }}">
+        Add Violation
+    </a>
+</div>
+
+{% endif %}
+
+{% endblock %}

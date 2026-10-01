@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h1>Add Traffic Violation</h1>
+
+    <form method="POST">
+
+        <label>Vehicle Number</label>
+        <input
+            type="text"
+            name="vehicle"
+            placeholder="TN01AB1234"
+            required
+        >
+
+        <label>Owner Name</label>
+        <input
+            type="text"
+            name="owner"
+            placeholder="Enter owner name"
+            required
+        >
+
+        <label>Violation Type</label>
+
+        <select name="type" required>
+            <option value="">Select Violation</option>
+            <option value="Speeding">Speeding</option>
+            <option value="Red Light Violation">Red Light Violation</option>
+            <option value="No Helmet">No Helmet</option>
+            <option value="No Seat Belt">No Seat Belt</option>
+            <option value="Wrong Parking">Wrong Parking</option>
+        </select>
+
+        <label>Location</label>
+        <input
+            type="text"
+            name="location"
+            placeholder="Enter location"
+            required
+        >
+
+        <label>Date</label>
+        <input
+            type="date"
+            name="date"
+            required
+        >
+
+        <button type="submit">
+            Save Violation
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

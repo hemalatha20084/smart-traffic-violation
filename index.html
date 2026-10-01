@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Smart Traffic Violation Logger</h1>
+
+    <p>
+        Easily record and manage traffic violations.
+    </p>
+
+    <a class="button" href="{{ url_for('add') }}">
+        Add New Violation
+    </a>
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <h2>{{ violations|length }}</h2>
+        <p>Total Violations</p>
+    </div>
+
+    <div class="card">
+        <h2>🚗</h2>
+        <p>Vehicle Monitoring</p>
+    </div>
+
+    <div class="card">
+        <h2>📋</h2>
+        <p>Violation Records</p>
+    </div>
+
+</section>
+
+{% endblock %}

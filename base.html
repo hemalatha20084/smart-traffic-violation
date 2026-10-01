@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Traffic Violation Logger</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🚦 Smart Traffic Violation Logger</div>
+
+    <div class="menu">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('add') }}">Add Violation</a>
+        <a href="{{ url_for('history') }}">History</a>
+        <a href="{{ url_for('status') }}">Status</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </div>
+</nav>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>© 2026 Smart Traffic Violation Logger</p>
+</footer>
+
+</body>
+</html>

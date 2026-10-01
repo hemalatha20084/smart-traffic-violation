@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">Violation Status</h1>
+
+<div class="status-container">
+
+    {% if violations %}
+
+        {% for violation in violations %}
+
+        <div class="status-card">
+
+            <h2>{{ violation.vehicle }}</h2>
+
+            <p>
+                Violation:
+                <strong>{{ violation.type }}</strong>
+            </p>
+
+            <p>
+                Location: {{ violation.location }}
+            </p>
+
+            <p>
+                Date: {{ violation.date }}
+            </p>
+
+            <span class="status">
+                {{ violation.status }}
+            </span>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="empty">
+            <h2>No Status Available</h2>
+            <p>No violation has been added yet.</p>
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
